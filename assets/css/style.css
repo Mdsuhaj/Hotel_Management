@@ -1,0 +1,378 @@
+/* =====================================================================
+   Luxe Stay - Luxury Hotel Booking Theme
+   ===================================================================== */
+
+:root {
+    --gold: #c9a04e;
+    --gold-light: #e6c878;
+    --charcoal: #14110f;
+    --charcoal-2: #1d1916;
+    --cream: #f6f1e7;
+    --text-muted: #b9b0a0;
+    --danger: #c0463c;
+    --success: #4c8b5c;
+    --radius: 10px;
+    --shadow: 0 14px 40px rgba(0,0,0,0.35);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Lato', 'Segoe UI', sans-serif;
+    background: var(--charcoal);
+    color: var(--cream);
+}
+
+h1, h2, h3, h4, .brand {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: 0.5px;
+}
+
+a { text-decoration: none; }
+
+.gold-text { color: var(--gold-light); }
+
+/* ---------- Navbar ---------- */
+.ls-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    background: linear-gradient(180deg, rgba(20,17,15,0.97), rgba(20,17,15,0.85));
+    border-bottom: 1px solid rgba(201,160,78,0.35);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.ls-navbar .brand {
+    font-size: 24px;
+    color: var(--gold-light);
+    font-weight: 700;
+}
+
+.ls-navbar .brand span { color: var(--cream); font-weight: 400; }
+
+.ls-nav-links { display: flex; align-items: center; gap: 26px; }
+
+.ls-nav-links a {
+    color: var(--cream);
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+.ls-nav-links a:hover { color: var(--gold-light); opacity: 1; }
+
+.ls-btn {
+    display: inline-block;
+    padding: 11px 26px;
+    border-radius: 30px;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold-light);
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+}
+
+.ls-btn:hover { background: var(--gold); color: var(--charcoal); }
+
+.ls-btn-solid {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: var(--charcoal);
+    border: none;
+    font-weight: 700;
+}
+
+.ls-btn-solid:hover { filter: brightness(1.08); }
+
+.ls-btn-block { width: 100%; text-align: center; }
+
+/* ---------- Auth pages (login / register) ---------- */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+}
+
+.auth-visual {
+    flex: 1.1;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+}
+
+.auth-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20,17,15,0.15) 0%, rgba(20,17,15,0.95) 100%);
+}
+
+.auth-visual-text {
+    position: relative;
+    z-index: 2;
+    padding: 50px;
+}
+
+.auth-visual-text h1 {
+    font-size: 38px;
+    color: var(--cream);
+    margin-bottom: 10px;
+}
+
+.auth-visual-text p { color: var(--text-muted); max-width: 420px; }
+
+.auth-form-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--charcoal-2);
+    padding: 40px;
+}
+
+.auth-card { width: 100%; max-width: 420px; }
+
+.auth-card h2 { font-size: 30px; margin-bottom: 6px; color: var(--cream); }
+.auth-card .sub { color: var(--text-muted); margin-bottom: 30px; font-size: 14px; }
+
+.ls-label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    margin-top: 18px;
+}
+
+.ls-input, .ls-select {
+    width: 100%;
+    padding: 13px 16px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(201,160,78,0.3);
+    background: rgba(255,255,255,0.04);
+    color: var(--cream);
+    font-size: 14px;
+    outline: none;
+}
+
+.ls-input:focus, .ls-select:focus { border-color: var(--gold); }
+
+.ls-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.auth-foot { margin-top: 22px; font-size: 13px; color: var(--text-muted); text-align: center; }
+.auth-foot a { color: var(--gold-light); }
+
+.alert {
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+.alert-error { background: rgba(192,70,60,0.15); border: 1px solid var(--danger); color: #f3b6b1; }
+.alert-success { background: rgba(76,139,92,0.15); border: 1px solid var(--success); color: #b7e3c3; }
+
+/* ---------- Page container / hero ---------- */
+.page-hero {
+    padding: 50px 40px 20px;
+    text-align: center;
+}
+.page-hero h1 { font-size: 34px; margin-bottom: 8px; }
+.page-hero p { color: var(--text-muted); }
+
+.container { max-width: 1180px; margin: 0 auto; padding: 0 40px 60px; }
+
+/* ---------- Room cards ---------- */
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    margin-top: 30px;
+}
+
+.room-card {
+    background: var(--charcoal-2);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(201,160,78,0.18);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease;
+}
+
+.room-card:hover { transform: translateY(-6px); }
+
+.room-card .img-wrap {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.room-card .img-wrap .badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(20,17,15,0.75);
+    color: var(--gold-light);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.room-card-body { padding: 22px; }
+.room-card-body h3 { font-size: 20px; margin: 0 0 8px; color: var(--cream); }
+.room-card-body p.desc { color: var(--text-muted); font-size: 13.5px; min-height: 40px; }
+
+.room-price {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin: 14px 0 18px;
+}
+.room-price .amt { font-size: 24px; color: var(--gold-light); font-weight: 700; }
+.room-price .per { font-size: 12px; color: var(--text-muted); }
+
+/* ---------- Booking / payment summary ---------- */
+.booking-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 36px;
+    margin-top: 30px;
+}
+
+.summary-card {
+    background: var(--charcoal-2);
+    border-radius: var(--radius);
+    border: 1px solid rgba(201,160,78,0.2);
+    overflow: hidden;
+}
+
+.summary-img { height: 240px; background-size: cover; background-position: center; }
+.summary-body { padding: 26px; }
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.08);
+    font-size: 14px;
+    color: var(--text-muted);
+}
+.summary-row span:last-child { color: var(--cream); font-weight: 600; }
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+    font-size: 18px;
+    color: var(--gold-light);
+    font-weight: 700;
+}
+
+.form-card {
+    background: var(--charcoal-2);
+    border-radius: var(--radius);
+    border: 1px solid rgba(201,160,78,0.2);
+    padding: 30px;
+}
+.form-card h3 { margin-top: 0; color: var(--cream); }
+
+/* ---------- Admin layout ---------- */
+.admin-layout { display: flex; min-height: calc(100vh - 76px); }
+
+.admin-sidebar {
+    width: 230px;
+    background: var(--charcoal-2);
+    border-right: 1px solid rgba(201,160,78,0.18);
+    padding: 30px 0;
+}
+.admin-sidebar a {
+    display: block;
+    padding: 13px 28px;
+    color: var(--text-muted);
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    border-left: 3px solid transparent;
+}
+.admin-sidebar a:hover, .admin-sidebar a.active {
+    color: var(--gold-light);
+    background: rgba(201,160,78,0.08);
+    border-left-color: var(--gold);
+}
+
+.admin-content { flex: 1; padding: 36px 40px; }
+.admin-content h1 { font-size: 28px; margin-bottom: 26px; }
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-bottom: 36px;
+}
+
+.stat-card {
+    background: var(--charcoal-2);
+    border: 1px solid rgba(201,160,78,0.2);
+    border-radius: var(--radius);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+}
+.stat-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+    background: var(--gold);
+}
+.stat-card .label { font-size: 12px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.6px; }
+.stat-card .value { font-size: 32px; color: var(--gold-light); font-weight: 700; margin-top: 8px; }
+
+/* ---------- Tables ---------- */
+.ls-table { width: 100%; border-collapse: collapse; background: var(--charcoal-2); border-radius: var(--radius); overflow: hidden; }
+.ls-table th, .ls-table td {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.ls-table th { color: var(--gold-light); text-transform: uppercase; font-size: 12px; letter-spacing: 0.5px; }
+.ls-table td { color: var(--cream); }
+.ls-table tr:hover td { background: rgba(201,160,78,0.04); }
+
+.status-pill {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.status-Available, .status-Confirmed { background: rgba(76,139,92,0.18); color: #8fd6a3; }
+.status-Booked, .status-Pending { background: rgba(201,160,78,0.18); color: var(--gold-light); }
+.status-CheckedIn { background: rgba(70,120,200,0.18); color: #9bc1f0; }
+.status-Cancelled { background: rgba(192,70,60,0.18); color: #f3b6b1; }
+
+.icon-link { color: var(--gold-light); font-size: 13px; }
+
+/* ---------- Footer ---------- */
+.ls-footer {
+    text-align: center;
+    padding: 26px;
+    color: var(--text-muted);
+    font-size: 13px;
+    border-top: 1px solid rgba(201,160,78,0.15);
+}
+
+@media (max-width: 860px) {
+    .auth-visual { display: none; }
+    .booking-grid { grid-template-columns: 1fr; }
+    .admin-layout { flex-direction: column; }
+    .admin-sidebar { width: 100%; display: flex; overflow-x: auto; padding: 10px; }
+    .admin-sidebar a { padding: 10px 16px; white-space: nowrap; border-left: none; border-bottom: 3px solid transparent; }
+}
