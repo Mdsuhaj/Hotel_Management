@@ -22,7 +22,7 @@
 
     <div class="auth-form-side">
         <div class="auth-card">
-            <h2>Sign in</h2>
+            <h2>Sign In</h2>
             <p class="sub">Enter your details to access your account.</p>
 
             <?php if ($this->session->flashdata('Error_Msg')) { ?>
